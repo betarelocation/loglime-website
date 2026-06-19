@@ -87,3 +87,44 @@ export async function sendSubscriptionEmails({ email, source }: SubscriptionEmai
     `
   });
 }
+
+type DemoRequestInput = {
+  name: string;
+  email: string;
+  restaurantType: string;
+};
+
+export async function sendDemoRequestEmail({ name, email, restaurantType }: DemoRequestInput) {
+  if (!isSmtpConfigured()) {
+    throw new Error("SMTP_NOT_CONFIGURED");
+  }
+
+  const transporter = getTransporter();
+  const from = env("SMTP_FROM") || env("SMTP_USER");
+  const notifyTo = env("SUBSCRIBE_NOTIFY_TO") || env("SMTP_FROM") || env("SMTP_USER");
+  const siteName = env("NEXT_PUBLIC_SITE_URL") || "Loglime website";
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeRestaurantType = escapeHtml(restaurantType);
+
+  await transporter.sendMail({
+    from,
+    to: notifyTo,
+    replyTo: email,
+    subject: "New Loglime Demo Request",
+    text: [
+      `New demo request from: ${name} (${email})`,
+      `Restaurant Type: ${restaurantType}`,
+      `Site: ${siteName}`
+    ].join("\n"),
+    html: `
+      <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1a1a1c">
+        <h2 style="margin:0 0 12px">New Loglime Demo Request</h2>
+        <p style="margin:0 0 8px"><strong>Name:</strong> ${safeName}</p>
+        <p style="margin:0 0 8px"><strong>Email:</strong> ${safeEmail}</p>
+        <p style="margin:0 0 8px"><strong>Restaurant Type:</strong> ${safeRestaurantType}</p>
+        <p style="margin:0;color:#62666d"><strong>Site:</strong> ${escapeHtml(siteName)}</p>
+      </div>
+    `
+  });
+}

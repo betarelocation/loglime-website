@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CalendarCheck, CheckCircle, Smartphone } from "lucide-react";
 import { DashboardMock } from "@/components/marketing/DashboardMock";
+import { RequestDemoForm } from "@/components/marketing/RequestDemoForm";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { createMetadata, routeMeta } from "@/lib/seo";
@@ -41,32 +42,7 @@ export default function DemoPage() {
               </ButtonLink>
             </div>
           </div>
-          <form className="nex-form-card">
-            <span className="feature-icon">
-              <CalendarCheck size={24} />
-            </span>
-            <h2 className="h2">Book a walkthrough</h2>
-            <div className="field">
-              <label htmlFor="name">Name</label>
-              <input className="input" id="name" placeholder="Your name" />
-            </div>
-            <div className="field">
-              <label htmlFor="email">Email</label>
-              <input className="input" id="email" placeholder="you@restaurant.com" type="email" />
-            </div>
-            <div className="field">
-              <label htmlFor="restaurant">Restaurant type</label>
-              <select className="select" id="restaurant">
-                <option>Cafe</option>
-                <option>Quick service</option>
-                <option>Fine dining</option>
-                <option>Multi-location</option>
-              </select>
-            </div>
-            <button className="btn btn-primary" type="button">
-              Request demo
-            </button>
-          </form>
+          <RequestDemoForm />
         </div>
       </section>
       <section className="nex-section nex-section-white">

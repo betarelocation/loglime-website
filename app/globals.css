@@ -4302,7 +4302,7 @@ ol {
 .nav-link:hover,
 .nav-link:focus-visible,
 .nav-item:hover .nav-trigger {
-  border-color: #e5e7eb;
+  border-color: transparent;
   background: #f9fafb;
   color: #1a1a1c;
 }
@@ -5238,23 +5238,14 @@ ol {
 }
 
 .home-feature-visual::before {
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(26, 26, 28, 0.08);
-  border-radius: 22px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.16)),
-    var(--feature-bg, #eaf7ff);
-  content: "";
+  display: none;
 }
 
 .home-feature-image-frame {
   position: absolute;
-  inset: 18px;
+  inset: 0;
   z-index: 2;
   overflow: hidden;
-  border-radius: 22px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .home-feature-image {
@@ -5615,6 +5606,7 @@ ol {
 
 .home-newsletter-form {
   display: flex;
+  flex-wrap: wrap;
   width: min(540px, 100%);
   gap: 12px;
   margin-top: 10px;
