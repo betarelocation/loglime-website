@@ -21,5 +21,15 @@
       "binding": "WORKER_SELF_REFERENCE",
       "service": "loglime-website"
     }
-  ]
+  ],
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://loglime.com",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "SMTP_SECURE": "true",
+    "SMTP_USER": "theloglime@gmail.com",
+    "SMTP_FROM": "Loglime <theloglime@gmail.com>",
+    "SUBSCRIBE_NOTIFY_TO": "theloglime@gmail.com",
+    "SUBSCRIBE_SEND_CONFIRMATION": "true"
+  }
 }
