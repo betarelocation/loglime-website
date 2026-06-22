@@ -1,0 +1,3 @@
+export const production = {"NEXT_PUBLIC_SITE_URL":"http://localhost:3000","SMTP_HOST":"smtp.gmail.com","SMTP_PORT":"465","SMTP_SECURE":"true","SMTP_USER":"theloglime@gmail.com","SMTP_PASSWORD":"uggbcrhzbysedwbi","SMTP_FROM":"Loglime <theloglime@gmail.com>","SUBSCRIBE_NOTIFY_TO":"theloglime@gmail.com","SUBSCRIBE_SEND_CONFIRMATION":"true"};
+export const development = {"NEXT_PUBLIC_SITE_URL":"http://localhost:3000","SMTP_HOST":"smtp.gmail.com","SMTP_PORT":"465","SMTP_SECURE":"true","SMTP_USER":"theloglime@gmail.com","SMTP_PASSWORD":"uggbcrhzbysedwbi","SMTP_FROM":"Loglime <theloglime@gmail.com>","SUBSCRIBE_NOTIFY_TO":"theloglime@gmail.com","SUBSCRIBE_SEND_CONFIRMATION":"true"};
+export const test = {};
