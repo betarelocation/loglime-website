@@ -66,10 +66,10 @@ function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
 }
 
 const socials = [
-  { label: "Facebook", icon: FacebookIcon },
-  { label: "Instagram", icon: InstagramIcon },
-  { label: "YouTube", icon: YoutubeIcon },
-  { label: "LinkedIn", icon: LinkedinIcon }
+  { label: "Facebook", icon: FacebookIcon, href: "/contact" },
+  { label: "Instagram", icon: InstagramIcon, href: "/contact" },
+  { label: "YouTube", icon: YoutubeIcon, href: "https://www.youtube.com/@Loglime" },
+  { label: "LinkedIn", icon: LinkedinIcon, href: "/contact" }
 ];
 
 export function SiteFooter() {
@@ -82,7 +82,7 @@ export function SiteFooter() {
             <p>Apps for restaurants. Digital menus, online ordering, bookings, loyalty and customer updates in branded app packages.</p>
             <div className="footer-socials" aria-label="Social links">
               {socials.map((social) => (
-                <a aria-label={social.label} href="/contact" key={social.label} title={social.label}>
+                <a aria-label={social.label} href={social.href} key={social.label} title={social.label}>
                   <social.icon aria-hidden="true" focusable="false" />
                 </a>
               ))}
